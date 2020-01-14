@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "dev123",
-    "database": "database_development",
+    "database": "ventas_development",
     "host": "127.0.0.1",
     "dialect": "mariadb",
     "operatorsAliases": false
@@ -10,7 +10,7 @@
   "test": {
     "username": "root",
     "password": "dev123",
-    "database": "database_test",
+    "database": "ventas_test",
     "host": "127.0.0.1",
     "dialect": "mariadb",
     "operatorsAliases": false
@@ -18,7 +18,7 @@
   "production": {
     "username": "root",
     "password": "dev123",
-    "database": "database_production",
+    "database": "ventas_production",
     "host": "127.0.0.1",
     "dialect": "mariadb",
     "operatorsAliases": false

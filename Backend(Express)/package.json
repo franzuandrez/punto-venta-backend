@@ -9,6 +9,7 @@
   "author": "MicroNet",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mariadb": "^2.1.5"
   }
 }

@@ -36,9 +36,13 @@ module.exports = {
                 allowNull: false,
                 type: Sequelize.INTEGER
             },
-            bind_id: {
+            bin_id: {
                 allowNull: false,
-                type: Sequelize.INTEGER
+                type: Sequelize.INTEGER,
+                references:{
+                    model:'bin',
+                    key:'bin_id'
+                }
             },
             type_movement_id: {
                 allowNull: false,

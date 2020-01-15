@@ -14,7 +14,11 @@ module.exports = {
             },
             warehouse_id: {
                 allowNull: false,
-                type: Sequelize.INTEGER
+                type: Sequelize.INTEGER,
+                references:{
+                    model:'warehouse',
+                    key:'warehouse_id'
+                }
             },
             section_id: {
                 allowNull: false,

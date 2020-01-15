@@ -34,22 +34,26 @@ module.exports = {
             },
             position_id: {
                 allowNull: false,
-                type: Sequelize.INTEGER
+                type: Sequelize.INTEGER,
+                references: {
+                    model: 'position',
+                    key: 'position_id'
+                }
             },
             bin_id: {
                 allowNull: false,
                 type: Sequelize.INTEGER,
-                references:{
-                    model:'bin',
-                    key:'bin_id'
+                references: {
+                    model: 'bin',
+                    key: 'bin_id'
                 }
             },
             type_movement_id: {
                 allowNull: false,
                 type: Sequelize.INTEGER,
-                references:{
-                    model:'type_movement',
-                    key:'type_movement_id'
+                references: {
+                    model: 'type_movement',
+                    key: 'type_movement_id'
                 }
             },
             createdAt: {

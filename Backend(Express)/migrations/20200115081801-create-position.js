@@ -1,8 +1,8 @@
 'use strict';
 module.exports = {
     up: (queryInterface, Sequelize) => {
-        return queryInterface.createTable('bin', {
-            bin_id: {
+        return queryInterface.createTable('position', {
+            position_id: {
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
@@ -11,7 +11,7 @@ module.exports = {
             name: {
                 type: Sequelize.STRING
             },
-            position_id: {
+            level_id: {
                 type: Sequelize.INTEGER
             },
             createdAt: {
@@ -25,6 +25,6 @@ module.exports = {
         });
     },
     down: (queryInterface, Sequelize) => {
-        return queryInterface.dropTable('bin');
+        return queryInterface.dropTable('position');
     }
 };

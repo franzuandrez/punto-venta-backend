@@ -18,7 +18,11 @@ module.exports = {
             },
             section_id: {
                 allowNull: false,
-                type: Sequelize.INTEGER
+                type: Sequelize.INTEGER,
+                references:{
+                    model:'section',
+                    key:'section_id'
+                }
             },
             corridor_id: {
                 allowNull: false,

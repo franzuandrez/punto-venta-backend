@@ -30,7 +30,11 @@ module.exports = {
             },
             level_id: {
                 allowNull: false,
-                type: Sequelize.INTEGER
+                type: Sequelize.INTEGER,
+                references:{
+                    model:'level',
+                    key:'level_id'
+                }
             },
             position_id: {
                 allowNull: false,

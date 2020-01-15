@@ -22,22 +22,26 @@ module.exports = {
             },
             corridor_id: {
                 allowNull: false,
-                type: Sequelize.INTEGER
+                type: Sequelize.INTEGER,
+                references: {
+                    model: 'corridor',
+                    key: 'corridor_id'
+                }
             },
             rack_id: {
                 allowNull: false,
                 type: Sequelize.INTEGER,
-                references:{
-                    model:'rack',
-                    key:'rack_id'
+                references: {
+                    model: 'rack',
+                    key: 'rack_id'
                 }
             },
             level_id: {
                 allowNull: false,
                 type: Sequelize.INTEGER,
-                references:{
-                    model:'level',
-                    key:'level_id'
+                references: {
+                    model: 'level',
+                    key: 'level_id'
                 }
             },
             position_id: {

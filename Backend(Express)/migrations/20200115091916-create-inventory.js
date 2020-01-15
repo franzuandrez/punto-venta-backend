@@ -26,7 +26,11 @@ module.exports = {
             },
             rack_id: {
                 allowNull: false,
-                type: Sequelize.INTEGER
+                type: Sequelize.INTEGER,
+                references:{
+                    model:'rack',
+                    key:'rack_id'
+                }
             },
             level_id: {
                 allowNull: false,

@@ -10,7 +10,11 @@ module.exports = {
             },
             product_id: {
                 allowNull: false,
-                type: Sequelize.INTEGER
+                type: Sequelize.INTEGER,
+                references:{
+                    model:'product',
+                    key:'product_id'
+                }
             },
             warehouse_id: {
                 allowNull: false,

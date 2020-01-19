@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     }, {});
     product.associate = function (models) {
         product.hasMany(models.inventory, {through: 'product_id', as: 'product'});
+        product.hasMany(models.product_photo, {through: 'product_id', as: 'product'});
     };
     return product;
 };

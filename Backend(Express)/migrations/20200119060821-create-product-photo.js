@@ -9,7 +9,12 @@ module.exports = {
                 type: Sequelize.INTEGER
             },
             product_id: {
-                type: Sequelize.INTEGER
+                type: Sequelize.INTEGER,
+                references:{
+                    model:'product',
+                    key:'product_id'
+                }
+
             },
             file_name: {
                 type: Sequelize.STRING

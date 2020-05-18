@@ -1,7 +1,7 @@
 /Backend(Express)/node_modules/
 /Backend(Express)/.idea/
 /.idea/
-/Backend(Express)/config/
+/config/
 # OS X
 .DS_Store*
 Icon?

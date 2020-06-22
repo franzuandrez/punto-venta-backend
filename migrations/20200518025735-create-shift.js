@@ -9,13 +9,13 @@ module.exports = {
                 type: Sequelize.INTEGER
             },
             name: {
-                tye: Sequelize.STRING
+                type: Sequelize.STRING
             },
             star_time: {
-                tye: Sequelize.DATETIME
+                type: Sequelize.DATE
             },
             end_time: {
-                tye: Sequelize.DATETIME
+                type: Sequelize.DATE
             },
             createdAt: {
                 allowNull: false,

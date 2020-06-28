@@ -12,7 +12,11 @@ module.exports = {
                 type: Sequelize.INTEGER
             },
             departament_id: {
-                type: Sequelize.INTEGER
+                type: Sequelize.INTEGER,
+                references:{
+                    model: 'department',
+                    key:'id'
+                }
             },
             start_date: {
                 type: Sequelize.DATE

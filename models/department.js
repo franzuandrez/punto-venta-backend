@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     group_name: DataTypes.STRING
   }, {});
   department.associate = function(models) {
-    // associations can be defined here
+    department.hasMany(models.employee_departament_history, {through: 'id', as: 'employee_departament_history'});
   };
   return department;
 };

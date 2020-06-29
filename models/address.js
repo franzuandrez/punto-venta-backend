@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     longitude: DataTypes.FLOAT
   }, {});
   address.associate = function(models) {
-    // associations can be defined here
+    address.hasMany(models.business_entity_address, {through: 'address_id', as: 'business_entity_address'})
   };
   return address;
 };

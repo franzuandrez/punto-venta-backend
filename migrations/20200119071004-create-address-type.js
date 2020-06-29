@@ -1,14 +1,11 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('address_types', {
-      id: {
+    return queryInterface.createTable('address_type', {
+      address_type_id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
-      },
-      address_type_id: {
         type: Sequelize.INTEGER
       },
       name: {
@@ -25,6 +22,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('address_types');
+    return queryInterface.dropTable('address_type');
   }
 };

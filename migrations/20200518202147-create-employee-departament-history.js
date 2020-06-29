@@ -1,8 +1,8 @@
 'use strict';
 module.exports = {
     up: (queryInterface, Sequelize) => {
-        return queryInterface.createTable('employee_departament_histories', {
-            id: {
+        return queryInterface.createTable('employee_departament_history', {
+            employee_departament_id: {
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
@@ -11,11 +11,18 @@ module.exports = {
             business_entity_id: {
                 type: Sequelize.INTEGER
             },
+            employee_id: {
+                type: Sequelize.INTEGER,
+                references: {
+                    model: 'employee',
+                    key: 'employee_id'
+                }
+            },
             departament_id: {
                 type: Sequelize.INTEGER,
-                references:{
+                references: {
                     model: 'department',
-                    key:'id'
+                    key: 'id'
                 }
             },
             start_date: {
@@ -42,6 +49,6 @@ module.exports = {
         });
     },
     down: (queryInterface, Sequelize) => {
-        return queryInterface.dropTable('employee_departament_histories');
+        return queryInterface.dropTable('employee_departament_history');
     }
 };

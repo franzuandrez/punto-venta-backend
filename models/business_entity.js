@@ -4,8 +4,7 @@ module.exports = (sequelize, DataTypes) => {
         business_entity_id: DataTypes.INTEGER
     }, {});
     business_entity.associate = function (models) {
-        // associations can be defined here
-        business_entity.hasOne(models.person, {through: 'business_entity_id', as: 'person'})
+        business_entity.hasOne(models.person, {through: 'person_id', as: 'person'});
     };
     return business_entity;
 };

@@ -1,6 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
     const person = sequelize.define('person', {
+        person_id: DataTypes.INTEGER,
         businesss_entity_id: DataTypes.INTEGER,
         person_type: DataTypes.STRING,
         title: DataTypes.STRING,
@@ -11,7 +12,6 @@ module.exports = (sequelize, DataTypes) => {
     }, {});
     person.associate = function (models) {
         // associations can be defined here
-        person.hasOne(models.businesss_entity, {through: 'businesss_entity_id', as: 'business_entity'});
     };
     return person;
 };

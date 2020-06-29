@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING
   }, {});
   phone_number_type.associate = function(models) {
-    // associations can be defined here
+    phone_number_type.hasMany(models.person_phone, {through: 'phone_numer_type_id', as: 'person_phone'});
   };
   return phone_number_type;
 };

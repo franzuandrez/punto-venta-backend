@@ -2,11 +2,18 @@
 module.exports = {
     up: (queryInterface, Sequelize) => {
         return queryInterface.createTable('product_cost_history', {
-            product_id: {
+            product_cost_id: {
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
-                type: Sequelize.INTEGER
+                type: Sequelize.INTEGER,
+            },
+            product_id: {
+                type: Sequelize.INTEGER,
+                references: {
+                    model: 'product',
+                    key: 'product_id'
+                }
             },
             start_date: {
                 type: Sequelize.DATE

@@ -33,7 +33,7 @@ module.exports = {
                 allowNull: false,
                 type: Sequelize.DATE
             }
-        });
+        });s
     },
     down: (queryInterface, Sequelize) => {
         return queryInterface.dropTable('special_offer_product');

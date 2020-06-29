@@ -13,7 +13,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER,
         references: {
-          model: 'sales_order_headers',
+          model: 'sales_order_header',
           key: 'sales_order_id'
         }
       },

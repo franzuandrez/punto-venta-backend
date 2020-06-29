@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('sales_order_headers', {
+    return queryInterface.createTable('sales_order_header', {
       sales_order_id: {
         allowNull: false,
         autoIncrement: true,
@@ -21,20 +21,46 @@ module.exports = {
         type: Sequelize.STRING
       },
       customer_id: {
-        type: Sequelize.INTEGER
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'customer',
+          key: 'customer_id'
+        }
       },
       sales_person_id: {
-        type: Sequelize.INTEGER
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'sales_person',
+          key: 'sales_person_id'
+        }
       },
       bill_to_address_id: {
-        type: Sequelize.INTEGER
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'address',
+          key: 'address_id'
+        }
       },
       ship_to_address_id: {
-        type: Sequelize.INTEGER
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'address',
+          key: 'address_id'
+        }
       },
       ship_mehtod: {
-        type: Sequelize.INTEGER
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'ship_method',
+          key: 'ship_method_id'
+        }
       },
+
       payment_type: {
         type: Sequelize.STRING
       },
@@ -64,6 +90,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('sales_order_headers');
+    return queryInterface.dropTable('sales_order_header');
   }
 };

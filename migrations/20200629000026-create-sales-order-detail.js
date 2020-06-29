@@ -1,24 +1,39 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('sales_order_details', {
+    return queryInterface.createTable('sales_order_detail', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      sales_order_header: {
-        type: Sequelize.INTEGER
+      sales_order_header_id: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'sales_order_header',
+          key: 'sales_order_id'
+        }
       },
       order_quantity: {
         type: Sequelize.DECIMAL
       },
       product_id: {
-        type: Sequelize.INTEGER
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'product',
+          key: 'product_id'
+        }
       },
-      special_order_id: {
-        type: Sequelize.INTEGER
+      special_offer_id: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'special_offer',
+          key: 'special_offer_id'
+        }
       },
       unit_price: {
         type: Sequelize.DECIMAL
@@ -40,6 +55,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('sales_order_details');
+    return queryInterface.dropTable('sales_order_detail');
   }
 };

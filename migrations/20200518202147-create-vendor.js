@@ -1,8 +1,8 @@
 'use strict';
 module.exports = {
     up: (queryInterface, Sequelize) => {
-        return queryInterface.createTable('customer', {
-            customer_id: {
+        return queryInterface.createTable('vendor', {
+            vendor_id: {
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
@@ -15,10 +15,22 @@ module.exports = {
                     key: 'business_entity_id'
                 }
             },
-            territory_id: {
+            account_number: {
+                type: Sequelize.STRING
+            },
+            name: {
+                type: Sequelize.STRING
+            },
+            credit_rating: {
                 type: Sequelize.INTEGER
             },
-            number_account: {
+            preferred_vendor_status: {
+                type: Sequelize.INTEGER
+            },
+            active_flag: {
+                type: Sequelize.INTEGER
+            },
+            url_web: {
                 type: Sequelize.STRING
             },
             createdAt: {
@@ -32,6 +44,6 @@ module.exports = {
         });
     },
     down: (queryInterface, Sequelize) => {
-        return queryInterface.dropTable('customer');
+        return queryInterface.dropTable('vendor');
     }
 };

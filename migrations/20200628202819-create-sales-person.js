@@ -34,6 +34,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('sales_persson');
+    return queryInterface.dropTable('sales_person');
   }
 };

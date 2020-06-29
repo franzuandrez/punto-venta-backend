@@ -43,6 +43,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('special_offers');
+    return queryInterface.dropTable('special_offer');
   }
 };

@@ -1,7 +1,8 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('business_entity_addresses', {
+    return queryInterface.createTable('business_entity_address', {
+
       business_entity_id: {
         allowNull: false,
         autoIncrement: true,
@@ -25,6 +26,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('business_entity_addresses');
+    return queryInterface.dropTable('business_entity_address');
   }
 };

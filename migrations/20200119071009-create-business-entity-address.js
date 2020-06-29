@@ -2,7 +2,7 @@
 module.exports = {
     up: (queryInterface, Sequelize) => {
         return queryInterface.createTable('business_entity_address', {
-            busines_address_id: {
+            business_address_id: {
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
@@ -16,10 +16,18 @@ module.exports = {
                 }
             },
             address_id: {
-                type: Sequelize.INTEGER
+                type: Sequelize.INTEGER,
+                references: {
+                    model: 'address',
+                    key: 'address_id'
+                }
             },
             address_type_id: {
-                type: Sequelize.INTEGER
+                type: Sequelize.INTEGER,
+                references: {
+                    model: 'address_type',
+                    key: 'address_type_id'
+                }
             },
             createdAt: {
                 allowNull: false,

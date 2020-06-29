@@ -19,6 +19,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   sales_order_header.associate = function(models) {
     // associations can be defined here
+    sales_order_header.hasMany(models.sales_order_header_sales_reason, {through: 'sales_order_id', as: 'sales_order_header'});
   };
   return sales_order_header;
 };

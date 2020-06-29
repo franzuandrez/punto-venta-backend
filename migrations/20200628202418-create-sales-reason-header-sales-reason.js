@@ -8,11 +8,22 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+
       sales_order_id: {
-        type: Sequelize.INTEGER
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'sales_order_headers',
+          key: 'sales_order_id'
+        }
       },
       sales_reason_id: {
-        type: Sequelize.INTEGER
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'sales_reasons',
+          key: 'sales_reason_id'
+        }
       },
       createdAt: {
         allowNull: false,

@@ -1,28 +1,37 @@
 'use strict';
 module.exports = {
     up: (queryInterface, Sequelize) => {
-        return queryInterface.createTable('product_list_price_history', {
-            product_list_price_id: {
+        return queryInterface.createTable('vendor', {
+            vendor_id: {
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
                 type: Sequelize.INTEGER
             },
-            product_id: {
+            business_entity_id: {
                 type: Sequelize.INTEGER,
                 references: {
-                    model: 'product',
-                    key: 'product_id'
+                    model: 'business_entity',
+                    key: 'business_entity_id'
                 }
             },
-            start_date: {
-                type: Sequelize.DATE
+            account_number: {
+                type: Sequelize.STRING
             },
-            end_date: {
-                type: Sequelize.DATE
+            name: {
+                type: Sequelize.STRING
             },
-            list_price: {
+            credit_rating: {
                 type: Sequelize.INTEGER
+            },
+            preferred_vendor_status: {
+                type: Sequelize.INTEGER
+            },
+            active_flag: {
+                type: Sequelize.INTEGER
+            },
+            url_web: {
+                type: Sequelize.STRING
             },
             createdAt: {
                 allowNull: false,
@@ -35,6 +44,6 @@ module.exports = {
         });
     },
     down: (queryInterface, Sequelize) => {
-        return queryInterface.dropTable('product_list_price_history');
+        return queryInterface.dropTable('vendor');
     }
 };

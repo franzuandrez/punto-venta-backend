@@ -15,6 +15,9 @@ module.exports = (sequelize, DataTypes) => {
         product.hasMany(models.product_photo, {through: 'product_id', as: 'product'});
         product.hasMany(models.product_review, {through: 'product_id', as: 'product'});
         product.hasMany(models.shopping_cart_item, {through: 'product_id', as: 'product'});
+        product.hasMany(models.product_cost_history, {through: 'product_id', as: 'product'});
+        product.hasMany(models.product_list_price_history, {through: 'product_id', as: 'product'});
+        product.hasMany(models.product_vendor, {through: 'product_id', as: 'product'});
     };
     return product;
 };

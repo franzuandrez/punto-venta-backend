@@ -1,28 +1,28 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('person_phone', {
-      person_phone_id:{
+    return queryInterface.createTable('sales_reason_header_sales_reasons', {
+      id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      business_entity_id: {
+
+      sales_order_id: {
+        allowNull: false,
         type: Sequelize.INTEGER,
         references: {
-          model:'business_entity',
-          key:'business_entity_id'
+          model: 'sales_order_header',
+          key: 'sales_order_id'
         }
       },
-      phone_number: {
-        type: Sequelize.STRING
-      },
-      phone_number_type_id: {
+      sales_reason_id: {
+        allowNull: false,
         type: Sequelize.INTEGER,
         references: {
-          model:'phone_number_type',
-          key:'phone_number_type_id'
+          model: 'sales_reasons',
+          key: 'sales_reason_id'
         }
       },
       createdAt: {
@@ -36,6 +36,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('person_phone');
+    return queryInterface.dropTable('sales_reason_header_sales_reasons');
   }
 };

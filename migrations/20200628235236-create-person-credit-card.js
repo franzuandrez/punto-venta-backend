@@ -1,18 +1,26 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('address_types', {
+    return queryInterface.createTable('person_credit_card', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      address_type_id: {
-        type: Sequelize.INTEGER
+      business_entity_id: {
+        type: Sequelize.INTEGER,
+        references:{
+          model:'business_entity',
+          key:'business_entity_id'
+        }
       },
-      name: {
-        type: Sequelize.STRING
+      credit_card_id: {
+        type: Sequelize.INTEGER,
+        references:{
+          model:'credit_card',
+          key:'credit_card_id'
+        }
       },
       createdAt: {
         allowNull: false,
@@ -25,6 +33,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('address_types');
+    return queryInterface.dropTable('person_credit_card');
   }
 };

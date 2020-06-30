@@ -1,8 +1,8 @@
 'use strict';
 module.exports = {
     up: (queryInterface, Sequelize) => {
-        return queryInterface.createTable('sales_person', {
-            sales_person_id: {
+        return queryInterface.createTable('business_entity_address', {
+            business_address_id: {
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
@@ -15,17 +15,19 @@ module.exports = {
                     key: 'business_entity_id'
                 }
             },
-            territory_id: {
-                type: Sequelize.INTEGER
+            address_id: {
+                type: Sequelize.INTEGER,
+                references: {
+                    model: 'address',
+                    key: 'address_id'
+                }
             },
-            sales_quota: {
-                type: Sequelize.DECIMAL
-            },
-            bonus: {
-                type: Sequelize.DECIMAL
-            },
-            commission_pct: {
-                type: Sequelize.DECIMAL
+            address_type_id: {
+                type: Sequelize.INTEGER,
+                references: {
+                    model: 'address_type',
+                    key: 'address_type_id'
+                }
             },
             createdAt: {
                 allowNull: false,
@@ -38,6 +40,6 @@ module.exports = {
         });
     },
     down: (queryInterface, Sequelize) => {
-        return queryInterface.dropTable('sales_person');
+        return queryInterface.dropTable('business_entity_address');
     }
 };

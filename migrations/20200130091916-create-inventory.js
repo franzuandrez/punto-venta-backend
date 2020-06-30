@@ -11,25 +11,25 @@ module.exports = {
             product_id: {
                 allowNull: false,
                 type: Sequelize.INTEGER,
-                references:{
-                    model:'product',
-                    key:'product_id'
+                references: {
+                    model: 'product',
+                    key: 'product_id'
                 }
             },
             warehouse_id: {
                 allowNull: false,
                 type: Sequelize.INTEGER,
-                references:{
-                    model:'warehouse',
-                    key:'warehouse_id'
+                references: {
+                    model: 'warehouse',
+                    key: 'warehouse_id'
                 }
             },
             section_id: {
                 allowNull: false,
                 type: Sequelize.INTEGER,
-                references:{
-                    model:'section',
-                    key:'section_id'
+                references: {
+                    model: 'section',
+                    key: 'section_id'
                 }
             },
             corridor_id: {

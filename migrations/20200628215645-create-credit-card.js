@@ -1,17 +1,23 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('special_offer_products', {
-      id: {
+    return queryInterface.createTable('credit_card', {
+      credit_card_id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      special_offer_id: {
+      card_type: {
+        type: Sequelize.STRING
+      },
+      card_number: {
+        type: Sequelize.STRING
+      },
+      exp_month: {
         type: Sequelize.INTEGER
       },
-      product_id: {
+      exp_year: {
         type: Sequelize.INTEGER
       },
       createdAt: {
@@ -25,6 +31,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('special_offer_products');
+    return queryInterface.dropTable('credit_card');
   }
 };

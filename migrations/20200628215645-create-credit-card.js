@@ -1,8 +1,8 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('credit_cards', {
-      id: {
+    return queryInterface.createTable('credit_card', {
+      credit_card_id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
@@ -31,6 +31,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('credit_cards');
+    return queryInterface.dropTable('credit_card');
   }
 };

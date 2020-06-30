@@ -8,9 +8,6 @@ module.exports = {
                 primaryKey: true,
                 type: Sequelize.INTEGER
             },
-            business_entity_id: {
-                type: Sequelize.INTEGER
-            },
             product_id: {
                 type: Sequelize.INTEGER,
                 references: {
@@ -22,7 +19,11 @@ module.exports = {
                 type: Sequelize.INTEGER
             },
             vendor_id: {
-                type: Sequelize.INTEGER
+                type: Sequelize.INTEGER,
+                references: {
+                    model: 'vendor',
+                    key: 'vendor_id'
+                }
             },
             standard_price: {
                 type: Sequelize.DECIMAL

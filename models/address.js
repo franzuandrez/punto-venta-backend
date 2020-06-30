@@ -9,8 +9,8 @@ module.exports = (sequelize, DataTypes) => {
     latitude: DataTypes.FLOAT,
     longitude: DataTypes.FLOAT
   }, {});
-  address.associate = function(models) {
-    address.hasMany(models.business_entity_address, {through: 'address_id', as: 'business_entity_address'})
+  address.associate = function (models) {
+    // associations can be defined here
   };
   return address;
 };

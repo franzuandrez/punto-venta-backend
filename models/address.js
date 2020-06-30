@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     latitude: DataTypes.FLOAT,
     longitude: DataTypes.FLOAT
   }, {});
-  address.associate = function(models) {
+  address.associate = function (models) {
     // associations can be defined here
   };
   return address;

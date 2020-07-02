@@ -5,7 +5,7 @@ let router = require("express").Router();
 
 // Retrieve all Tutorials
 router.get("/show", function (req, res, next) {
-    res.send('de tipo de contacto show');
+    res.send('Modificación nodemon.');
 });
 
 

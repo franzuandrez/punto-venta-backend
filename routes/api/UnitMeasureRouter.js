@@ -1,4 +1,4 @@
-const unitMeasure = require("../controllers/UnitMeasureController.js");
+const unitMeasure = require("../../controllers/UnitMeasureController.js");
 
 let router = require("express").Router();
 

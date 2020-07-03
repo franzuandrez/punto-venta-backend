@@ -14,8 +14,15 @@ exports.create = async (req, res) => {
     }
 };
 
-exports.findAll = (req, res) => {
-    //unitMeasureModel().findAll().then(un)
+exports.findAll = async (req, res) => {
+    try {
+        const unitAll = await models.Unit_measure.findAll();
+        return res.status(201).json({
+            unitAll,
+        });
+    } catch (e) {
+        return res.status(500).json({error: error.message})
+    }
 };
 
 

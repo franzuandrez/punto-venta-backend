@@ -9,8 +9,8 @@ router.post("/create", function(req, res){
     unitMeasure.create(req,res);
 });
 
-router.post("/show", function(req, res,next) {
-    res.send('ruta show');
+router.post("/show", function(req, res) {
+    unitMeasure.findAll(req,res)
 });
 
 

@@ -11,13 +11,13 @@ module.exports = (sequelize, DataTypes) => {
         instructions: DataTypes.STRING
     }, {});
     product.associate = function (models) {
-        product.hasMany(models.inventory, {through: 'product_id', as: 'product'});
-        product.hasMany(models.product_photo, {through: 'product_id', as: 'product'});
-        product.hasMany(models.product_review, {through: 'product_id', as: 'product'});
-        product.hasMany(models.shopping_cart_item, {through: 'product_id', as: 'product'});
-        product.hasMany(models.product_cost_history, {through: 'product_id', as: 'product'});
-        product.hasMany(models.product_list_price_history, {through: 'product_id', as: 'product'});
-        product.hasMany(models.product_vendor, {through: 'product_id', as: 'product'});
+        //product.belongsToMany(models.inventory, {through: 'product_id', as: 'product'});
+        //product.belongsToMany(models.product_photo, {through: 'product_id', as: 'product'});
+        //product.belongsToMany(models.product_review, {through: 'product_id', as: 'product'});
+        //product.belongsToMany(models.shopping_cart_item, {through: 'product_id', as: 'product'});
+        //product.belongsToMany(models.product_cost_history, {through: 'product_id', as: 'product'});
+        //product.belongsToMany(models.product_list_price_history, {through: 'product_id', as: 'product'});
+        //product.belongsToMany(models.product_vendor, {through: 'product_id', as: 'product'});
     };
     return product;
 };

@@ -6,8 +6,8 @@ module.exports = (sequelize, DataTypes) => {
         level_id: DataTypes.INTEGER
     }, {});
     position.associate = function (models) {
-        position.hasMany(models.inventory, {through: 'position_id', as: 'position'});
-        position.hasMany(models.bin, {through: 'position_id', as: 'position'});
+        //position.belongsToMany(models.inventory, {through: 'position_id', as: 'position'});
+        position.belongsToMany(models.bin, {through: 'position_id', as: 'position'});
     };
     return position;
 };

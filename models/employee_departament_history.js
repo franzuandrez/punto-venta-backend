@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     }, {});
     employee_departament_history.associate = function (models) {
 
-        employee_departament_history.belongsTo(models.departament, {through: 'departament_id', as: 'departament'})
+        //employee_departament_history.belongsTo(models.departament, {through: 'departament_id', as: 'departament'})
     };
     return employee_departament_history;
 };

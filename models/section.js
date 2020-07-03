@@ -6,8 +6,8 @@ module.exports = (sequelize, DataTypes) => {
         warehouse_id: DataTypes.INTEGER
     }, {});
     section.associate = function (models) {
-        section.hasMany(models.inventory, {through: 'section_id', as: 'section'});
-        section.hasMany(models.corridor, {through: 'section_id', as: 'section'});
+        //section.belongsToMany(models.inventory, {through: 'section_id', as: 'section'});
+        section.belongsToMany(models.corridor, {through: 'section_id', as: 'section'});
     };
     return section;
 };

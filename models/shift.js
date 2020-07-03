@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
         end_time: DataTypes.DATE
     }, {});
     shift.associate = function (models) {
-        shift.hasMany(models.employee_departament_history, {through: 'shift_id', as: 'employee_departament_history'});
+        shift.belongsToMany(models.employee_departament_history, {through: 'shift_id', as: 'employee_departament_history'});
     };
     return shift;
 };

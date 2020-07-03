@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
         factor: DataTypes.INTEGER
     }, {});
     Type_movement.associate = function (models) {
-        Type_movement.hasMany(models.inventory, {through: 'type_movement_id', as: 'inventory'});
+        //Type_movement.belongsToMany(models.inventory, {through: 'type_movement_id', as: 'inventory'});
     };
     return Type_movement;
 };

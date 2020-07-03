@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING
   }, {});
   address_type.associate = function(models) {
-    address_type.hasMany(models.business_entity_address, {through: 'address_type_id', as: 'business_entity_address'})
+    address_type.belongsToMany(models.business_entity_address, {through: 'address_type_id', as: 'business_entity_address'})
   };
   return address_type;
 };

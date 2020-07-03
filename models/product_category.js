@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
         name: DataTypes.STRING
     }, {});
     product_category.associate = function (models) {
-        product_category.hasMany(models.product_subcategory, {through: 'product_category_id', as: 'product_category'});
+        product_category.belongsToMany(models.product_subcategory, {through: 'product_category_id', as: 'product_category'});
     };
     return product_category;
 };

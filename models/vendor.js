@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     vendor.associate = function (models) {
         vendor.belongsTo(models.business_entity,
             {through: 'business_entity_id', as: 'business_entity'});
-        vendor.hasMany(models.product_vendor,
+        vendor.belongsToMany(models.product_vendor,
             {through: 'vendor_id', as: 'vendor'});
     };
     return vendor;

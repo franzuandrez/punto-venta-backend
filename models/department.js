@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     group_name: DataTypes.STRING
   }, {});
   department.associate = function(models) {
-    department.hasMany(models.employee_departament_history, {through: 'id', as: 'employee_departament_history'});
+    department.belongsToMany(models.employee_departament_history, {through: 'id', as: 'employee_departament_history'});
   };
   return department;
 };

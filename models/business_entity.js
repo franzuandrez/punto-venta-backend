@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     }, {});
     business_entity.associate = function (models) {
         business_entity.hasOne(models.person, {through: 'person_id', as: 'person'});
-        business_entity.hasMany(models.business_entity_address, {
+        business_entity.belongsToMany(models.business_entity_address, {
             through: 'business_entity_id',
             as: 'business_entity_address'
         });

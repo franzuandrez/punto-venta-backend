@@ -18,14 +18,14 @@ module.exports = (sequelize, DataTypes) => {
         comments: DataTypes.STRING
     }, {});
     sales_order_header.associate = function (models) {
-        sales_order_header.hasMany(models.sales_order_header_sales_reason, {
+        /*sales_order_header.belongsToMany(models.sales_order_header_sales_reason, {
             through: 'sales_order_id',
             as: 'sales_order_header'
         });
-        sales_order_header.hasMany(models.sales_order_detail, {
+        sales_order_header.belongsToMany(models.sales_order_detail, {
             through: 'sales_order_header_id',
             as: 'sales_order_header'
-        });
+        });*/
     };
     return sales_order_header;
 };

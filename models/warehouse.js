@@ -5,8 +5,8 @@ module.exports = (sequelize, DataTypes) => {
         name: DataTypes.STRING
     }, {});
     warehouse.associate = function (models) {
-        warehouse.hasMany(models.inventory, {through: 'warehouse_id', as: 'warehouse'});
-        warehouse.hasMany(models.section, {through: 'warehouse_id', as: 'warehouse'});
+        //warehouse.belongsToMany(models.inventory, {through: 'warehouse_id', as: 'warehouse'});
+        warehouse.belongsToMany(models.section, {through: 'warehouse_id', as: 'warehouse'});
     };
     return warehouse;
 };

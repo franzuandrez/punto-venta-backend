@@ -3,7 +3,7 @@ module.exports = {
     up: (queryInterface, Sequelize) => {
         return queryInterface.createTable('Unit_measures', {
             unit_measure_code: {
-                allowNull: false,
+                allowNull: true,
                 autoIncrement: true,
                 primaryKey: true,
                 type: Sequelize.INTEGER
@@ -11,14 +11,8 @@ module.exports = {
             name: {
                 type: Sequelize.STRING
             },
-            created_At: {
-                allowNull: false,
-                type: Sequelize.DATE
-            },
-            updated_At: {
-                allowNull: false,
-                type: Sequelize.DATE
-            }
+            createdAt: Sequelize.DATE,
+            updatedAt: Sequelize.DATE,
         });
     },
     down: (queryInterface, Sequelize) => {

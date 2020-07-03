@@ -24,6 +24,7 @@ require("./routes/api")(app);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api', addressRouter);
+//Sinconiza modelos y migraciones de la base de datos.
 models.sequelize.sync();
 
 // catch 404 and forward to error handler
